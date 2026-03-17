@@ -35,7 +35,6 @@ app.use(express.json());
 
 const resend = RESEND_API_KEY ? new Resend(RESEND_API_KEY) : null;
 
-
 let isConnected = false;
 
 async function connectDB() {
@@ -46,10 +45,17 @@ async function connectDB() {
   isConnected = true;
 }
 
-// Rate limit
 const submitLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 6
+});
+
+app.get("/", (_req, res) => {
+  res.json({
+    ok: true,
+    message: "Galaxy Messages backend is live.",
+    health: "/api/health"
+  });
 });
 
 app.get("/api/health", (_req, res) => {
