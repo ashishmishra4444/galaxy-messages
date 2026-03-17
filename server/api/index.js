@@ -97,18 +97,33 @@ app.post("/api/messages", submitLimiter, async (req, res) => {
         subject: `New Galaxy message from ${senderName}`,
         text: `New Galaxy 2026 memory\n\nFrom: ${senderName}\nRelationship: ${relationshipLabel}\n\nMessage:\n${savedMessage.message}`,
         html: `
-      <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #3f2430; max-width: 640px; margin: 0 auto; padding: 24px; background: #fff7f9; border: 1px solid #f3d7e1; border-radius: 18px;">
-        <h2 style="margin: 0 0 16px; color: #7d3f51;">New Galaxy 2026 Memory</h2>
-        <p style="margin: 0 0 8px;"><strong>From:</strong> ${senderName}</p>
-        <p style="margin: 0 0 20px;"><strong>Relationship:</strong> ${relationshipLabel}</p>
-        <div style="padding: 16px 18px; background: #ffffff; border: 1px solid #f0d9e1; border-radius: 14px; white-space: pre-wrap; color: #5a3341;">
-          ${savedMessage.message
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")}
-        </div>
-      </div>
-    `,
+<div style="font-family: 'Inter', Arial, sans-serif; line-height: 1.6; color: #e7e5e4; max-width: 640px; margin: 0 auto; padding: 28px; background: linear-gradient(145deg,#030303 10%,#0d0a09 45%,#140f0d 75%,#040404 100%); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px;">
+
+  <h2 style="margin: 0 0 18px; color: #fde68a; letter-spacing: 0.08em;">
+    ✨ New Galaxy 2026 Memory
+  </h2>
+
+  <p style="margin: 0 0 6px; color: #d6d3d1;">
+    <strong style="color:#fcd34d;">From:</strong> ${senderName}
+  </p>
+
+  <p style="margin: 0 0 18px; color: #d6d3d1;">
+    <strong style="color:#fcd34d;">Connection:</strong> ${relationshipLabel}
+  </p>
+
+  <div style="padding: 18px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; white-space: pre-wrap; color: #e5e5e5;">
+    ${savedMessage.message
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")}
+  </div>
+
+  <div style="margin-top: 22px; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: #a8a29e;">
+    Galaxy 2026 • VSSUT Farewell
+  </div>
+
+</div>
+`,
       });
     }
 

@@ -133,7 +133,7 @@ function MemoryModal({ isOpen, onClose }) {
                       Digital Postcard
                     </p>
                     <h2 className="mt-4 font-display text-3xl text-stone-50 sm:text-4xl">
-                      Leave your piece of the night.
+                      Leave a memory for my scrapbook.
                     </h2>
                   </div>
                   <p className="mt-6 max-w-xs text-sm leading-7 text-stone-300/85">
