@@ -87,7 +87,20 @@ app.post("/api/messages", submitLimiter, async (req, res) => {
         from: RESEND_FROM,
         to: [NOTIFY_EMAIL],
         subject: `New Galaxy message from ${senderName}`,
-        text: savedMessage.message
+        text: `New Galaxy 2026 memory\n\nFrom: ${senderName}\nRelationship: ${relationshipLabel}\n\nMessage:\n${savedMessage.message}`,
+        html: `
+          <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #3f2430; max-width: 640px; margin: 0 auto; padding: 24px; background: #fff7f9; border: 1px solid #f3d7e1; border-radius: 18px;">
+            <h2 style="margin: 0 0 16px; color: #7d3f51;">New Galaxy 2026 Memory</h2>
+            <p style="margin: 0 0 8px;"><strong>From:</strong> ${senderName}</p>
+            <p style="margin: 0 0 20px;"><strong>Relationship:</strong> ${relationshipLabel}</p>
+            <div style="padding: 16px 18px; background: #ffffff; border: 1px solid #f0d9e1; border-radius: 14px; white-space: pre-wrap; color: #5a3341;">
+              ${savedMessage.message
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")}
+            </div>
+          </div>
+        `,
       });
     }
 
