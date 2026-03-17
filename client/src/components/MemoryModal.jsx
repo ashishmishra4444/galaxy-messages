@@ -5,13 +5,6 @@ import { createMessage } from "../utils/api";
 
 const relationshipOptions = [
   "Branch mate",
-  "Lab partner",
-  "Project teammate",
-  "Late-night coder",
-  "Hostel wingmate",
-  "Hostel roommate",
-  "Event squad",
-  "Campus wanderer",
   "Junior",
   "Other",
 ];

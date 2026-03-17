@@ -19,13 +19,6 @@ const NOTIFY_EMAIL =
 
 const RELATIONSHIP_OPTIONS = new Set([
   "Branch mate",
-  "Lab partner",
-  "Project teammate",
-  "Late-night coder",
-  "Hostel wingmate",
-  "Hostel roommate",
-  "Event squad",
-  "Campus wanderer",
   "Junior",
   "Other"
 ]);
